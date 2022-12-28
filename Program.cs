@@ -138,79 +138,79 @@
 // Show2DArray(myArray);
 
 
-//Задание 3. Из двумерного массива целых чисел удалить строку и столбец, на пересечении которых расположен наименьший элемент.
-// то есть удалаем и строку и столбец в которой находится этот элемент
+// //Задание 3. Из двумерного массива целых чисел удалить строку и столбец, на пересечении которых расположен наименьший элемент.
+// // то есть удалаем и строку и столбец в которой находится этот элемент
 
 
-int[,] Create2DRandomArray(int rows, int colomns, int minValue, int maxValue)
-{
-    int[,] newArray = new int[rows, colomns];
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < colomns; j++)
-        {
-            newArray[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
-    }
-    return newArray;
-}
+// int[,] Create2DRandomArray(int rows, int colomns, int minValue, int maxValue)
+// {
+//     int[,] newArray = new int[rows, colomns];
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < colomns; j++)
+//         {
+//             newArray[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return newArray;
+// }
 
-void Show2DArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + " ");
-        }
-        Console.WriteLine();
-    }
-}
-
-
-int[,] FindMinNumber(int[,] array)
-{
-    int min = array[0, 0];
-    int newi = 0;
-    int newj = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (min >=  array[i, j])
-            {
-                min = array[i, j];
-                newi = i;
-                newj = j;
-            }
-        }
-    }
-
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        array [newi,i] = 0; 
-    }
-
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-        array [j,newj] = 0; 
-    }
-    return array;
-}
+// void Show2DArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
 
-Console.WriteLine("Введите количество строк");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов:");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите минимальное возможное значение элемента массива:");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите максимально возможное значение элемента массива:");
-int max = Convert.ToInt32(Console.ReadLine());
+// int[,] FindMinNumber(int[,] array)
+// {
+//     int min = array[0, 0];
+//     int newi = 0;
+//     int newj = 0;
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (min >=  array[i, j])
+//             {
+//                 min = array[i, j];
+//                 newi = i;
+//                 newj = j;
+//             }
+//         }
+//     }
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         array [newi,i] = 0; 
+//     }
+
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         array [j,newj] = 0; 
+//     }
+//     return array;
+// }
 
 
-int[,] myArray = Create2DRandomArray(m, n, min, max);
-Show2DArray(myArray);
-Console.WriteLine();
-myArray = FindMinNumber(myArray);
-Show2DArray(myArray);
+// Console.WriteLine("Введите количество строк");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов:");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное возможное значение элемента массива:");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимально возможное значение элемента массива:");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+
+// int[,] myArray = Create2DRandomArray(m, n, min, max);
+// Show2DArray(myArray);
+// Console.WriteLine();
+// myArray = FindMinNumber(myArray);
+// Show2DArray(myArray);
