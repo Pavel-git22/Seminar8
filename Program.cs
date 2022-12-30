@@ -227,41 +227,145 @@ void Show2DArray(int[,] array)
 // 8 4 4 2
 
 
-int[,] array54 = {
-{1, 4, 7, 2},
-{5, 9, 2, 3,},
-{8, 4, 2, 4}
-};
+// int[,] array54 = {
+// {1, 4, 7, 2},
+// {5, 9, 2, 3,},
+// {8, 4, 2, 4}
+// };
 
 
-Show2DArray(array54);
-Console.WriteLine();
+// Show2DArray(array54);
+// Console.WriteLine();
 
 
-int[,] organizesColomns(int[,] array)
-{
+// int[,] organizesColomns(int[,] array)
+// {
 
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        int Count= 0 ;
-        for (int j = 0; j < array.GetLength(1) - Count+1; j++)
-        {
-          
-            for (int k = 0; k < array.GetLength(1) -1; k++)
-            {                
-                if (array[i, k] < array[i, k+1])
-                {
-                    int temp = array[i, k];
-                    array[i, k] = array[i, k+1];
-                    array[i, k+1] = temp;
-                    Count++;
-                }
-                
-            }
-            
-        }
-    }
-    return array;
-}
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         int Count= 0 ;
+//         for (int j = 0; j < array.GetLength(1) - Count+1; j++)
+//         {
 
-Show2DArray(organizesColomns(array54));
+//             for (int k = 0; k < array.GetLength(1) -1; k++)
+//             {                
+//                 if (array[i, k] < array[i, k+1])
+//                 {
+//                     int temp = array[i, k];
+//                     array[i, k] = array[i, k+1];
+//                     array[i, k+1] = temp;
+//                     Count++;
+//                 }
+
+//             }
+
+//         }
+//     }
+//     return array;
+// }
+
+// Show2DArray(organizesColomns(array54));
+
+
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Например, даны 2 матрицы:
+// 2 4 | 3 4
+// 3 2 | 3 3
+// Результирующая матрица будет:
+// 18 20
+// 15 18
+
+// int[,] Array1 ={
+//     {2,4},
+//     {3,2}
+// };
+
+// int[,] Array2 ={
+//     {3,4},
+//     {3,3}
+// };
+
+
+// int[,] mulArray(int[,] array1, int[,] array2)
+// {
+//     int[,] arrMul = { { 0, 0 }, { 0, 0 } };
+
+//     for (int i = 0; i < array1.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array1.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array1.GetLength(1); k++)
+
+//                // arrMul[i,j] = array1[i,j]*array2[i,j] + array1[i, k] * array2[k, j];
+//                 arrMul[i, j] += array1[i, k] * array2[k, j];
+
+//         }
+//     }
+
+
+//     return arrMul;
+
+// }
+
+// Show2DArray(mulArray(Array1, Array2));
+
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
+// 66(0,0,0) 25(0,1,0)
+// 34(1,0,0) 41(1,1,0)
+// 27(0,0,1) 90(0,1,1)
+// 26(1,0,1) 55(1,1,1)
+
+
+
+// int[,,] Create3DRandomArray(int rows, int colomns, int zz)
+// {
+//     int[,,] newArray = new int[rows, colomns, zz];
+//     int Count = 1;
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < colomns; j++)
+//         {
+//             for (int k = 0; k < zz; k++)
+//             {       
+//                 int a = 10*Count;
+//                 int b =10+10*Count;         
+//                 newArray[i, j, k] = new Random().Next(a, b);
+//                 ++Count;
+//             }
+//         }
+//     }
+//     return newArray;
+// }
+
+
+// void Show3DArray(int[,,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 Console.Write($"  {array[i, j, k]}  ( {i}, {j}, {k}) ");
+//             }
+//             Console.WriteLine();
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int[,,] MyArray1 = Create3DRandomArray(2, 2, 2);
+// Show3DArray(MyArray1);
+
+
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// Например, на выходе получается вот такой массив:
+// 01 02 03 04
+// 12 13 14 05
+// 11 16 15 06
+// 10 09 08 07
+
+
+
