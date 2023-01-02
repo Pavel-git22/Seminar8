@@ -161,7 +161,7 @@ void Show2DArray(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[i, j] + " ");
+            Console.Write($"{array[i, j]:D2} ");
         }
         Console.WriteLine();
     }
@@ -368,4 +368,45 @@ void Show2DArray(int[,] array)
 // 10 09 08 07
 
 
+int[,] arrSpiral()
+{
+    int number = 1;
+    int[,] arr = { { 0, 0, 0, 0 }, { 0, 0, 0, 0, }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
+    while (number < 17)
+    {
+        if (number < 5)
+        {
+            arr[0, number - 1] = number;
 
+        }
+        if (number > 4 && number < 8)
+        {
+
+            arr[number - 4, 3] = number;
+        }
+        if (number > 7 && number < 11)
+        {
+
+            arr[3, 10 - number] = number;
+        }
+        if (number > 10 && number < 13)
+        {
+            arr[13 - number, 0] = number;
+        }
+        if (number > 12 && number < 15)
+        {
+            arr[1, number - 12] = number;
+        }
+        if (number > 14 && number < 17)
+        arr[2, 17 -number] = number;
+        
+        
+
+
+        number++;
+
+    }
+    return arr;
+}
+
+Show2DArray(arrSpiral());
