@@ -267,6 +267,68 @@ void Show2DArray(int[,] array)
 // Show2DArray(organizesColomns(array54));
 
 
+// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
+// Например, задан массив:
+
+// 1 4 7 2
+
+// 5 9 2 3
+
+// 8 4 2 4
+
+// 5 2 6 7
+
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+
+
+
+int[,] array56 = {
+
+{1, 4, 7, 2},
+
+{5, 9, 2, 3},
+
+{8, 4, 2, 4},
+
+{5, 2, 6, 7},
+};
+
+int minRow(int[,] array)
+{
+    int[,] SumArray = new int[4, 4];
+    int[,] minSumArray = new int[4, 4];
+    int RowMin = 0;
+    int stroka = 1;
+
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        RowMin = RowMin + array[0, j];
+    }
+
+    for (int i = 1; i < array.GetLength(0); i++)
+    {
+        int RowMinTemp = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            RowMinTemp = RowMinTemp + array[i, j];
+        }
+        if (RowMinTemp < RowMin)
+        {
+            RowMin = RowMinTemp;
+            stroka = i+1;
+        }
+    }
+    return stroka;
+}
+
+Console.WriteLine($"  Cтроки с наименьшей суммой элементов :  {minRow(array56)}  строка");
+
+
+
+
+
+
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 // Например, даны 2 матрицы:
 // 2 4 | 3 4
@@ -398,9 +460,9 @@ int[,] arrSpiral()
             arr[1, number - 12] = number;
         }
         if (number > 14 && number < 17)
-        arr[2, 17 -number] = number;
-        
-        
+            arr[2, 17 - number] = number;
+
+
 
 
         number++;
